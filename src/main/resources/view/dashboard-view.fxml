@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<VBox spacing="20.0" styleClass="root-container" stylesheets="@../css/dashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.the_seranity_mental_health_therapy_center.controller.DashboardController">
+   <padding>
+      <Insets bottom="28.0" left="28.0" right="28.0" top="28.0" />
+   </padding>
+   <children>
+      <!-- Welcome Banner -->
+      <VBox styleClass="banner-glass" spacing="6.0">
+         <children>
+            <Label fx:id="lblWelcomeGreeting" text="Welcome Back, Administrator" styleClass="banner-title" />
+            <Label text="Here is what's happening at Serenity Mental Health Center today." styleClass="banner-subtitle" />
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="28.0" right="28.0" top="24.0" />
+         </padding>
+      </VBox>
+
+      <!-- 4-Column Stat Grid -->
+      <GridPane hgap="18.0" vgap="18.0">
+         <columnConstraints>
+            <ColumnConstraints percentWidth="25.0" />
+            <ColumnConstraints percentWidth="25.0" />
+            <ColumnConstraints percentWidth="25.0" />
+            <ColumnConstraints percentWidth="25.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="130.0" />
+         </rowConstraints>
+         <children>
+            <!-- Stat 1: Total Patients -->
+            <VBox styleClass="stat-card patients" spacing="6.0" GridPane.columnIndex="0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="👥" styleClass="stat-icon" />
+                        <Label text="Total Patients" styleClass="stat-title" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblTotalPatients" text="0" styleClass="stat-value" />
+                  <Label text="Registered in system" styleClass="stat-subtext" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+            </VBox>
+
+            <!-- Stat 2: Today's Sessions -->
+            <VBox styleClass="stat-card sessions" spacing="6.0" GridPane.columnIndex="1">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="📅" styleClass="stat-icon" />
+                        <Label text="Today's Sessions" styleClass="stat-title" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblTodaySessions" text="0" styleClass="stat-value" />
+                  <Label text="Scheduled for today" styleClass="stat-subtext" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+            </VBox>
+
+            <!-- Stat 3: Active Programs -->
+            <VBox styleClass="stat-card programs" spacing="6.0" GridPane.columnIndex="2">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="🧘" styleClass="stat-icon" />
+                        <Label text="Active Programs" styleClass="stat-title" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblActivePrograms" text="0" styleClass="stat-value" />
+                  <Label text="Therapy programs offered" styleClass="stat-subtext" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+            </VBox>
+
+            <!-- Stat 4: Gross Revenue -->
+            <VBox styleClass="stat-card revenue" spacing="6.0" GridPane.columnIndex="3">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="💰" styleClass="stat-icon" />
+                        <Label text="Gross Revenue" styleClass="stat-title" />
+                     </children>
+                  </HBox>
+                  <Label fx:id="lblGrossRevenue" text="LKR 0.00" styleClass="stat-value" />
+                  <Label text="Total earnings generated" styleClass="stat-subtext" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </GridPane>
+
+      <!-- Split Layout: Chart & Table -->
+      <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <!-- Chart Container -->
+            <VBox styleClass="panel-card" spacing="12.0" HBox.hgrow="ALWAYS" prefWidth="500.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
+                     <children>
+                        <Label text="📊" styleClass="section-icon" />
+                        <Label text="Patient Enrollment by Therapy Program" styleClass="section-title" />
+                     </children>
+                  </HBox>
+                  <BarChart fx:id="barChartEnrollment" legendVisible="false" prefHeight="350.0" styleClass="modern-chart">
+                     <xAxis>
+                        <CategoryAxis label="Therapy Program" styleClass="axis-label" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis label="Patients Enrolled" tickUnit="1.0" minorTickVisible="false" styleClass="axis-label" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+            </VBox>
+
+            <!-- Table Container -->
+            <VBox styleClass="panel-card" spacing="12.0" HBox.hgrow="ALWAYS" prefWidth="500.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="8.0">
+                     <children>
+                        <Label text="📝" styleClass="section-icon" />
+                        <Label text="Recent Patient Registrations" styleClass="section-title" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tblRecentRegistrations" VBox.vgrow="ALWAYS" prefHeight="350.0" styleClass="modern-table">
+                     <columns>
+                        <TableColumn fx:id="colRegId" text="Reg ID" prefWidth="80.0" />
+                        <TableColumn fx:id="colPatientName" text="Patient Name" prefWidth="150.0" />
+                        <TableColumn fx:id="colProgramName" text="Enrolled Program" prefWidth="150.0" />
+                        <TableColumn fx:id="colRegDate" text="Date" prefWidth="100.0" />
+                     </columns>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,178 @@
+/* ============================================
+   Serenity Mental Health - Dashboard Theme
+   Soft, calming mental-health aesthetic
+   ============================================ */
+
+.root-container {
+    -fx-background-color: #f0f4f8;
+}
+
+/* ---------- Glass Banner ---------- */
+.banner-glass {
+    -fx-background-color: linear-gradient(to right, #4a90a4, #5ba8b0);
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(74, 144, 164, 0.25), 12, 0, 0, 4);
+}
+
+.banner-title {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.banner-subtitle {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #e0f7fa;
+}
+
+/* ---------- Stat Cards ---------- */
+.stat-card {
+    -fx-background-radius: 14px;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0, 0, 3);
+    -fx-border-radius: 14px;
+    -fx-border-width: 0 0 0 5px;
+}
+
+.stat-card.patients {
+    -fx-border-color: transparent transparent transparent #4a90a4;
+}
+.stat-card.sessions {
+    -fx-border-color: transparent transparent transparent #7fb069;
+}
+.stat-card.programs {
+    -fx-border-color: transparent transparent transparent #c9a227;
+}
+.stat-card.revenue {
+    -fx-border-color: transparent transparent transparent #e07a5f;
+}
+
+.stat-icon {
+    -fx-font-size: 18px;
+}
+
+.stat-title {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #6b7b8d;
+    -fx-font-weight: 600;
+}
+
+.stat-value {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.stat-subtext {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 11px;
+    -fx-text-fill: #95a5a6;
+}
+
+/* ---------- Panel Cards (Chart / Table) ---------- */
+.panel-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 10, 0, 0, 3);
+}
+
+.section-icon {
+    -fx-font-size: 16px;
+}
+
+.section-title {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* ---------- Modern Table ---------- */
+.modern-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: #ecf0f1;
+}
+
+.modern-table .column-header {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10 12 10 12;
+}
+
+.modern-table .column-header .label {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4a5568;
+}
+
+.modern-table .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-padding: 8 0 8 0;
+}
+
+.modern-table .table-row-cell:odd {
+    -fx-background-color: #fbfdfe;
+}
+
+.modern-table .table-row-cell:hover {
+    -fx-background-color: #f0f9ff;
+}
+
+.modern-table .table-row-cell:selected {
+    -fx-background-color: #e0f2fe;
+}
+
+.modern-table .table-cell {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #2d3748;
+    -fx-padding: 8 12 8 12;
+}
+
+/* ---------- Modern Chart ---------- */
+.modern-chart {
+    -fx-background-color: transparent;
+    -fx-legend-visible: false;
+}
+
+.modern-chart .chart-title {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.modern-chart .axis-label {
+    -fx-font-family: "Segoe UI", "System", sans-serif;
+    -fx-font-size: 12px;
+    -fx-text-fill: #718096;
+}
+
+.modern-chart .chart-bar {
+    -fx-bar-fill: #4a90a4;
+    -fx-background-radius: 4px 4px 0 0;
+}
+
+.modern-chart .chart-bar:hover {
+    -fx-bar-fill: #5ba8b0;
+}
+
+.modern-chart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.modern-chart .chart-vertical-grid-lines {
+    -fx-stroke: #edf2f7;
+}
+
+.modern-chart .chart-horizontal-grid-lines {
+    -fx-stroke: #edf2f7;
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" styleClass="session-root" stylesheets="@../css/session.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.the_seranity_mental_health_therapy_center.controller.SessionController">
+   <children>
+      <!-- Header -->
+      <VBox layoutX="32.0" layoutY="24.0" spacing="4.0">
+         <children>
+            <Label styleClass="page-title" text="Session Scheduling" />
+            <Label styleClass="page-subtitle" text="Book and manage therapy sessions" />
+         </children>
+      </VBox>
+
+      <!-- Form Card -->
+      <VBox layoutX="32.0" layoutY="90.0" prefWidth="886.0" spacing="18.0" styleClass="form-card">
+         <children>
+            <!-- Form Grid -->
+            <GridPane hgap="20.0" vgap="16.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="33.3" />
+                  <ColumnConstraints percentWidth="33.3" />
+                  <ColumnConstraints percentWidth="33.3" />
+               </columnConstraints>
+               <children>
+                  <!-- Row 1 -->
+                  <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="field-label" text="Session ID" />
+                        <TextField fx:id="txtId" promptText="S001" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="field-label" text="Patient ID" />
+                        <TextField fx:id="txtPatientId" promptText="P001" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                     <children>
+                        <Label styleClass="field-label" text="Therapist ID" />
+                        <TextField fx:id="txtTherapistId" promptText="T001" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <!-- Row 2 -->
+                  <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="field-label" text="Session Date" />
+                        <DatePicker fx:id="dtpDate" prefWidth="400.0" styleClass="modern-date" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="field-label" text="Session Time (HH:MM)" />
+                        <TextField fx:id="txtTime" promptText="14:30" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label styleClass="field-label" text="Status" />
+                        <ComboBox fx:id="cmbStatus" prefWidth="400.0" promptText="Select Status" styleClass="modern-combo" />
+                     </children>
+                  </VBox>
+               </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+            </GridPane>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER_RIGHT" spacing="12.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnClearOnAction" prefWidth="100.0" styleClass="btn-clear" text="Clear" />
+                  <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="100.0" styleClass="btn-delete" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#btnUpdateOnAction" prefWidth="100.0" styleClass="btn-update" text="Update" />
+                  <Button mnemonicParsing="false" onAction="#btnSaveOnAction" prefWidth="100.0" styleClass="btn-save" text="Save" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+         </padding>
+      </VBox>
+
+      <!-- Table Card -->
+      <VBox layoutX="32.0" layoutY="343.0" prefHeight="327.0" prefWidth="886.0" styleClass="table-card">
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label styleClass="section-title" text="Scheduled Sessions" />
+                  <Label styleClass="section-subtitle" text="All upcoming and past therapy sessions" />
+               </children>
+            </VBox>
+            <TableView fx:id="tblSessions" styleClass="modern-table" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="99.0" text="Session ID" />
+                  <TableColumn fx:id="colPatientId" prefWidth="199.0" text="Patient ID" />
+                  <TableColumn fx:id="colTherapistId" prefWidth="172.0" text="Therapist ID" />
+                  <TableColumn fx:id="colDate" prefWidth="77.0" text="Date" />
+                  <TableColumn fx:id="colTime" prefWidth="133.0" text="Time" />
+                  <TableColumn fx:id="colStatus" prefWidth="159.0" text="Status" />
+               </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+
+<AnchorPane prefHeight="700.0" prefWidth="950.0" styleClass="therapist-root" stylesheets="@../css/therapist.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.the_seranity_mental_health_therapy_center.controller.TherapistController">
+   <children>
+      <!-- Header -->
+      <VBox layoutX="32.0" layoutY="24.0" spacing="4.0">
+         <children>
+            <Label text="Therapist Management" styleClass="page-title" />
+            <Label text="Manage therapist profiles and specializations" styleClass="page-subtitle" />
+         </children>
+      </VBox>
+
+      <!-- Form Card -->
+      <VBox layoutX="32.0" layoutY="90.0" prefWidth="886.0" spacing="18.0" styleClass="form-card">
+         <children>
+            <!-- Form Grid -->
+            <GridPane hgap="20.0" vgap="16.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="50.0" />
+                  <ColumnConstraints percentWidth="50.0" />
+               </columnConstraints>
+               <children>
+                  <!-- Row 1 -->
+                  <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <children>
+                        <Label text="Therapist ID" styleClass="field-label" />
+                        <TextField fx:id="txtId" promptText="T001" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                     <children>
+                        <Label text="Full Name" styleClass="field-label" />
+                        <TextField fx:id="txtName" promptText="Dr. Jane Smith" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <!-- Row 2 -->
+                  <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Specialization" styleClass="field-label" />
+                        <TextField fx:id="txtSpecialization" promptText="Cognitive Behavioral Therapy" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Contact Number" styleClass="field-label" />
+                        <TextField fx:id="txtContact" promptText="+94 77 123 4567" styleClass="modern-input" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER_RIGHT" spacing="12.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnClearOnAction" prefWidth="100.0" styleClass="btn-clear" text="Clear" />
+                  <Button mnemonicParsing="false" onAction="#btnDeleteOnAction" prefWidth="100.0" styleClass="btn-delete" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#btnUpdateOnAction" prefWidth="100.0" styleClass="btn-update" text="Update" />
+                  <Button mnemonicParsing="false" onAction="#btnSaveOnAction" prefWidth="100.0" styleClass="btn-save" text="Save" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+         </padding>
+      </VBox>
+
+      <!-- Table Card -->
+      <VBox layoutX="32.0" layoutY="340.0" prefWidth="886.0" prefHeight="330.0" styleClass="table-card">
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label text="Therapist Directory" styleClass="section-title" />
+                  <Label text="Registered therapists and their specializations" styleClass="section-subtitle" />
+               </children>
+            </VBox>
+            <TableView fx:id="tblTherapists" VBox.vgrow="ALWAYS" styleClass="modern-table">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="100.0" text="Therapist ID" />
+                  <TableColumn fx:id="colName" prefWidth="250.0" text="Name" />
+                  <TableColumn fx:id="colSpecialization" prefWidth="300.0" text="Specialization" />
+                  <TableColumn fx:id="colContact" prefWidth="150.0" text="Contact Number" />
+               </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

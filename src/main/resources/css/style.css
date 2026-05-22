@@ -1,0 +1,203 @@
+/* Glassmorphism Design System */
+.root {
+    -fx-font-family: 'Montserrat', 'Inter', 'Raleway', sans-serif;
+}
+
+/* Background Pane - Deep teal gradient */
+.main-bg {
+    -fx-background-color: linear-gradient(to bottom right, #0F2027, #203A43, #2C5364);
+}
+
+/* Background Pane for Main Layout - Lighter for content */
+.dashboard-bg {
+    -fx-background-color: #F4F7F6;
+}
+
+/* Sidebar for dashboard */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom right, #0F2027, #203A43);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 2, 0);
+}
+
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15 20;
+    -fx-cursor: hand;
+}
+
+.sidebar-btn:hover, .sidebar-btn-active {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-border-color: transparent transparent transparent #00f2fe;
+    -fx-border-width: 0 0 0 4;
+}
+
+/* Glass Pane */
+.glass-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 20;
+    -fx-border-color: linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+    -fx-border-width: 1.5;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 8);
+}
+
+/* Texts inside glass pane */
+.glass-text {
+    -fx-text-fill: white;
+}
+
+.glass-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+/* Text Fields */
+.glass-text-field {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-radius: 8;
+    -fx-padding: 8;
+}
+.glass-text-field:focused {
+    -fx-border-color: rgba(255, 255, 255, 0.8);
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Standard Content Text Fields (Non-glass) */
+.content-text-field {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+    -fx-background-radius: 5;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+.content-text-field:focused {
+    -fx-border-color: #4facfe;
+    -fx-border-width: 2;
+}
+
+/* Primary Button */
+.glass-btn-primary {
+    -fx-background-color: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+.glass-btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);
+    -fx-effect: dropshadow(three-pass-box, rgba(79, 172, 254, 0.6), 10, 0, 0, 4);
+}
+
+/* Danger Button */
+.btn-danger {
+    -fx-background-color: #ff4d4f;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+.btn-danger:hover {
+    -fx-background-color: #ff7875;
+}
+
+/* Premium Dashboard UI Styling */
+.banner-card {
+    -fx-background-color: linear-gradient(to right, #0F2027, #203A43);
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 32, 39, 0.15), 10, 0, 0, 5);
+}
+
+.banner-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.banner-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+}
+
+.stat-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(148, 163, 184, 0.06), 10, 0, 0, 4);
+}
+
+.stat-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #64748b;
+}
+
+.stat-value {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0f172a;
+}
+
+.stat-subtext {
+    -fx-font-size: 11px;
+    -fx-text-fill: #94a3b8;
+}
+
+.chart-card, .table-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(148, 163, 184, 0.06), 10, 0, 0, 4);
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* Custom TableView styling inside dashboard */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 8px 8px 0px 0px;
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}
+
+.table-view .table-row-cell:filled:hover {
+    -fx-background-color: #f1f5f9;
+}
+
