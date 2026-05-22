@@ -1,19 +1,23 @@
-module lk.ijse.serenity {
+module lk.ijse.the_seranity_mental_health_therapy_center {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
-    requires static lombok;
-    requires net.sf.jasperreports.core;
-    requires java.mail;
-    requires jakarta.persistence;
-    requires java.naming;
+    
     requires org.hibernate.orm.core;
+    requires java.naming;
+    requires java.sql;
+    requires jakarta.persistence;
+    requires static lombok;
+    requires jbcrypt;
 
-    opens lk.ijse.serenity.entity to org.hibernate.orm.core;
-    opens lk.ijse.serenity.config to jakarta.persistence;
+    opens lk.ijse.the_seranity_mental_health_therapy_center.entity to org.hibernate.orm.core;
 
-    opens lk.ijse.serenity.controller to javafx.fxml;
-    opens lk.ijse.serenity.dto.tm to javafx.base;
+    opens lk.ijse.the_seranity_mental_health_therapy_center to javafx.fxml;
+    exports lk.ijse.the_seranity_mental_health_therapy_center;
 
-    exports lk.ijse.serenity;
+    opens lk.ijse.the_seranity_mental_health_therapy_center.controller to javafx.fxml;
+    exports lk.ijse.the_seranity_mental_health_therapy_center.controller;
+
+    opens lk.ijse.the_seranity_mental_health_therapy_center.dto to javafx.base;
+
+    exports lk.ijse.the_seranity_mental_health_therapy_center.util;
 }
